@@ -1,8 +1,7 @@
-package web.config.DAO;
+package web.dao;
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
+import lombok.experimental.FieldDefaults;
 import org.springframework.stereotype.Repository;
 import web.Model.Car;
 
@@ -12,6 +11,7 @@ import java.util.stream.Collectors;
 
 @Setter
 @Getter
+@FieldDefaults(level = AccessLevel.PRIVATE)
 @NoArgsConstructor
 @Repository
 public class CarDAOImp implements CarDAO{
