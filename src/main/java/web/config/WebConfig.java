@@ -1,5 +1,8 @@
 package web.config;
 
+import lombok.AccessLevel;
+import lombok.experimental.FieldDefaults;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -11,13 +14,15 @@ import org.thymeleaf.spring5.SpringTemplateEngine;
 import org.thymeleaf.spring5.templateresolver.SpringResourceTemplateResolver;
 import org.thymeleaf.spring5.view.ThymeleafViewResolver;
 
+@FieldDefaults(makeFinal = true, level = AccessLevel.PRIVATE)
 @Configuration
 @EnableWebMvc
 @ComponentScan("web")
 public class WebConfig implements WebMvcConfigurer {
 
-    private final ApplicationContext applicationContext;
+    ApplicationContext applicationContext;
 
+    @Autowired
     public WebConfig(ApplicationContext applicationContext) {
         this.applicationContext = applicationContext;
     }
