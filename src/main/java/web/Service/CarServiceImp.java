@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import web.Model.Car;
 import web.dao.CarDAO;
+import web.dao.CarDAOImp;
 
 import java.util.List;
 
@@ -14,11 +15,10 @@ import java.util.List;
 @FieldDefaults(makeFinal = true, level = AccessLevel.PRIVATE)
 @Service
 public class CarServiceImp implements CarService {
-    CarDAO carDAO;
+    CarDAO carDAO = new CarDAOImp();
 
     @Autowired
-    public CarServiceImp(CarDAO carDAO) {
-        this.carDAO = carDAO;
+    public CarServiceImp() {
     }
 
     @Override
