@@ -16,7 +16,7 @@ import web.Service.CarServiceImp;
 import java.util.List;
 
 
-@FieldDefaults(level = AccessLevel.PRIVATE)
+@FieldDefaults(makeFinal = true, level = AccessLevel.PRIVATE)
 @Controller
 public class CarController {
 
